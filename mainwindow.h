@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtSql>
+#include <QSqlDatabase>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +21,7 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
-void enterdb();// это созданный нами слот для внесения данных в БД
+void inserttodb();// это созданный нами слот для внесения данных в БД
+void selectfromdb();// это созданный нами слот для получения данных из БД
 };
 #endif // MAINWINDOW_H

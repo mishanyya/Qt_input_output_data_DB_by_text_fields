@@ -17,8 +17,8 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>30</y>
+      <x>10</x>
+      <y>10</y>
       <width>181</width>
       <height>25</height>
      </rect>
@@ -27,37 +27,67 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>30</y>
-      <width>121</width>
+      <x>10</x>
+      <y>170</y>
+      <width>171</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>ввод данных</string>
+     <string>ввод данных в БД</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="textEdit">
     <property name="geometry">
      <rect>
-      <x>233</x>
-      <y>170</y>
-      <width>201</width>
-      <height>70</height>
+      <x>420</x>
+      <y>50</y>
+      <width>291</width>
+      <height>151</height>
      </rect>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>190</y>
-      <width>121</width>
+      <x>420</x>
+      <y>20</y>
+      <width>281</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>вывод данных</string>
+     <string>вывод данных из БД</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>181</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>181</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>181</width>
+      <height>25</height>
+     </rect>
     </property>
    </widget>
   </widget>

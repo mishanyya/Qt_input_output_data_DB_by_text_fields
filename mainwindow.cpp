@@ -48,10 +48,22 @@ void MainWindow::inserttodb(){
 
     db.open();//открывает базу данных, указанную в db.setDatabaseName("/home/mishanyya/fordbwork/examplebdfordbwork");
 
+    QString name=ui->lineEdit->text();//имя
+    QString fone=ui->lineEdit_2->text();//номер телефона
+    QString automodel=ui->lineEdit_3->text();//модель авто
+    QString price=ui->lineEdit_4->text();//стоимость
+
     QSqlQuery query( db );//создает объект для запросов SQL
 
+    query.prepare("INSERT INTO basetable (number,name,fone,automodel,price) VALUES (NULL,:name,:fone,:automodel,:price)");
 
-            query.exec("INSERT INTO basetable (number,name,fone,automodel,price) VALUES (NULL,'B223_26102011', 111, 'PC23_26102011',111)" );
+    query.bindValue(":name", name);
+    query.bindValue(":fone", fone);
+    query.bindValue(":automodel", automodel);
+    query.bindValue(":price", price);
+    query.exec();
+            db.close();//закрыть БД
+
 
 //конец кода для работы с БД
             //Работает!!!
@@ -78,13 +90,18 @@ void MainWindow::selectfromdb(){
 
             query.exec("SELECT * FROM basetable");
             //Вывод значений из БД
-            while (query.next())
+            while (query.previous())
+                //next() выводит последнее значение таблицы БД
             {
-            QString value = query.value(1).toString();
+            QString value_0 = query.value(0).toString();//элемент 0 массива вывода
+            QString value_1 = query.value(1).toString();//элемент 1 массива вывода
+            QString value_2 = query.value(2).toString();//элемент 1 массива вывода
+            QString value_3 = query.value(2).toString();//элемент 1 массива вывода
+            QString value_4 = query.value(2).toString();//элемент 1 массива вывода
 
-            ui->textEdit->setText(value);
+            ui->textEdit->setText(value_0+value_1+value_2+value_3+value_4);
             }
-
+db.close();//закрыть БД
 //конец кода для работы с БД
             //Работает!!!
 }

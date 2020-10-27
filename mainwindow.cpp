@@ -89,18 +89,20 @@ void MainWindow::selectfromdb(){
 
 
             query.exec("SELECT * FROM basetable");
-            //Вывод значений из БД
-            while (query.previous())
-                //next() выводит последнее значение таблицы БД
+                        //Вывод всех значений из БД
+            while (query.next())
             {
-            QString value_0 = query.value(0).toString();//элемент 0 массива вывода
-            QString value_1 = query.value(1).toString();//элемент 1 массива вывода
-            QString value_2 = query.value(2).toString();//элемент 1 массива вывода
-            QString value_3 = query.value(2).toString();//элемент 1 массива вывода
-            QString value_4 = query.value(2).toString();//элемент 1 массива вывода
+                QString value_0 = query.value(0).toString();//value(0)-элемент 0 массива вывода
+                QString value_1 = query.value(1).toString();//value(1)-элемент 1 массива вывода
+                QString value_2 = query.value(2).toString();//value(2)-элемент 2 массива вывода
+                QString value_3 = query.value(3).toString();//value(3)-элемент 3 массива вывода
+                QString value_4 = query.value(4).toString();//value(4)-элемент 4 массива вывода
 
-            ui->textEdit->setText(value_0+value_1+value_2+value_3+value_4);
+                ui->textEdit->setText(value_0+" "+value_1+" "+value_2+" "+value_3+" "+value_4+"\n");//Вывод только последней строки из БД
+            //ui->textEdit->insertPlainText(value_0+" "+value_1+" "+value_2+" "+value_3+" "+value_4+"\n");//Вывод всех значений из БД
             }
+
+
 db.close();//закрыть БД
 //конец кода для работы с БД
             //Работает!!!

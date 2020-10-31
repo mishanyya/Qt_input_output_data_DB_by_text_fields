@@ -23,5 +23,6 @@ private:
 private slots:
 void inserttodb();// это созданный нами слот для внесения данных в БД
 void selectfromdb();// это созданный нами слот для получения данных из БД
+void gettingexpierence();// это созданный нами слот для вариантов работы с БД
 };
 #endif // MAINWINDOW_H

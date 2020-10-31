@@ -2,6 +2,8 @@
 #include "QtSql/QSqlDatabase"
 #include "QSqlQuery"
 #include "QtSql"
+#include <QTableView>
+
 #include "QApplication"
 
 int main(int argc, char *argv[])

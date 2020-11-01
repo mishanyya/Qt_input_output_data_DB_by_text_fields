@@ -1,8 +1,10 @@
 #include "mainwindow.h"
-#include "QtSql/QSqlDatabase"
-#include "QSqlQuery"
-#include "QtSql"
-#include <QTableView>
+
+//#include "QSqlDatabase"
+//#include "QtSql/QSqlDatabase"
+//#include "QSqlQuery"
+//#include "QtSql"
+//#include "QTableView"
 
 #include "QApplication"
 

@@ -2,9 +2,9 @@
 #include "ui_mainwindow.h"
 
 
-#include <QTableView>//добавлено для вывода БД в таблице
-#include "QStandardItemModel"//добавлено для вывода БД в таблице
-#include "QStandardItem"//добавлено для вывода БД в таблице
+//#include <QTableView>//добавлено для вывода БД в таблице
+//#include "QStandardItemModel"//добавлено для вывода БД в таблице
+//#include "QStandardItem"//добавлено для вывода БД в таблице
 
 /*для исправления ошибки QSqlDatabasePrivate::addDatabase: duplicate connection name 'qt_sql_default_connection', old connection removed
 подключать драйвер для БД (обычно доступно несколько драйверов, их список содержится в стандартном методе QSqlDatabase::drivers();)
@@ -92,6 +92,7 @@ void MainWindow::gettingexpierence(){
 
     query.exec("SELECT * FROM basetable");
 
+    //вывод ВСЕХ значений согласно условию
     while (query.next())
     {
     QString value_0 = query.value(0).toString();//value(0)-элемент 0 массива вывода

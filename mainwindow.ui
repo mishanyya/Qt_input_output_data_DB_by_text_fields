@@ -100,7 +100,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>to get expirience</string>
+     <string>вывод данных из БД</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="textEdit_2">

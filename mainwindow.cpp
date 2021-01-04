@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(inserttodb())); //для внесения данных в БД
     connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(selectfromdb())); //для получения данных из БД
-    connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(gettingexpierence())); //для получения опыта работы с БД
+    connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(gettingexpierence())); //для получения данных из БД
 }
 
 MainWindow::~MainWindow()
@@ -29,8 +29,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::inserttodb(){
     //подключить БД по ее адресу на компьютере
-    db.setDatabaseName("/home/mishanyya/fordbwork/examplebdfordbwork");
-    //открывает базу данных, указанную в db.setDatabaseName("/home/mishanyya/fordbwork/examplebdfordbwork");
+
+    db.setDatabaseName("/home/mishanyya/databaseexample/examplebdfordbwork");
+    //открывает базу данных, указанную в db.setDatabaseName("/home/mishanyya/databaseexample/examplebdfordbwork");
     db.open();
 
     QString name=ui->lineEdit->text();//имя
@@ -55,8 +56,8 @@ void MainWindow::inserttodb(){
 
 void MainWindow::selectfromdb(){
     //подключить БД по ее адресу на компьютере
-    db.setDatabaseName("/home/mishanyya/fordbwork/examplebdfordbwork");
-    //открывает базу данных, указанную в db.setDatabaseName("/home/mishanyya/fordbwork/examplebdfordbwork");
+    db.setDatabaseName("/home/mishanyya/databaseexample/examplebdfordbwork");
+    //открывает базу данных, указанную в db.setDatabaseName("/home/mishanyya/databaseexample/examplebdfordbwork");
     db.open();
 
     //создает объект для запросов SQL
@@ -83,8 +84,8 @@ void MainWindow::selectfromdb(){
 
 void MainWindow::gettingexpierence(){
     //подключить БД по ее адресу на компьютере
-    db.setDatabaseName("/home/mishanyya/fordbwork/examplebdfordbwork");
-    //открывает базу данных, указанную в db.setDatabaseName("/home/mishanyya/fordbwork/examplebdfordbwork");
+    db.setDatabaseName("/home/mishanyya/databaseexample/examplebdfordbwork");
+    //открывает базу данных, указанную в db.setDatabaseName("/home/mishanyya/databaseexample/examplebdfordbwork");
     db.open();
 
     //создает объект для запросов SQL
@@ -93,7 +94,7 @@ void MainWindow::gettingexpierence(){
     query.exec("SELECT * FROM basetable");
 
     //вывод ВСЕХ значений согласно условию
-    while (query.next())
+    while(query.next())
     {
     QString value_0 = query.value(0).toString();//value(0)-элемент 0 массива вывода
     QString value_1 = query.value(1).toString();//value(1)-элемент 1 массива вывода
@@ -101,9 +102,9 @@ void MainWindow::gettingexpierence(){
     QString value_3 = query.value(3).toString();//value(3)-элемент 3 массива вывода
     QString value_4 = query.value(4).toString();//value(4)-элемент 4 массива вывода
 
-    ui->textEdit_2->append(value_0+" "+value_1+" "+value_2+" "+value_3+" "+value_4+"\n");// Выводит все строки из таблицы БД с небольшим интервалом между ними
+    //ui->textEdit_2->append(value_0+" "+value_1+" "+value_2+" "+value_3+" "+value_4+"\n");// Выводит все строки из таблицы БД с небольшим интервалом между ними
     //ui->textEdit_2->setText(value_0+" "+value_1+" "+value_2+" "+value_3+" "+value_4+"\n");// Выводит только последнюю строку из таблицы БД
-    //ui->textEdit_2->insertPlainText(value_0+" "+value_1+" "+value_2+" "+value_3+" "+value_4+"\n");//Выводит все строки из таблицы БД
+    ui->textEdit_2->insertPlainText(value_0+" "+value_1+" "+value_2+" "+value_3+" "+value_4+"\n");//Выводит все строки из таблицы БД
     }
 
      //проверка работы запроса к БД
